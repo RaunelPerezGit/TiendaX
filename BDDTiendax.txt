@@ -1,0 +1,24 @@
+﻿create table usuario(cve_usu int unsigned auto_increment not null primary key,nombre_usu varchar(100) not null, paterno_usu varchar(100) not null, materno_usu varchar(100) not null, rfc_usu varchar(150) not null, mail_usu varchar(100) not null, direccion_usu text not null, tel_usu varchar(20) not null,login_usu varchar(100) not null, pass_usu varchar(100) not null,status_usu int not null,tipo_usu int unsigned not null,tienda int not null);
+
+create table proveedor(cve_prov int unsigned auto_increment not null primary key, nombre_prov varchar(100) not null, paterno_prov varchar(100) not null, materno_prov varchar(100) not null, rfc_prov varchar(150) not null, mail_prov varchar(100) not null, direccion_prov text not null, tel_prov varchar(20) not null, status_prov int not null);
+
+create table producto(cve_prod varchar(100) not null primary key, desc_prod varchar(100) not null, pu_prod double not null, umed_prod varchar(50) not null,status_prod int unsigned not null, cve_prov int unsigned not null, foreign key(cve_prov) references proveedor(cve_prov)on delete restrict on update cascade);
+
+create table kit(cve_kit int unsigned auto_increment not null primary key, nombre_kit varchar(100) not null,status_kit int not null);
+
+create table kitproducto(cve_kitprod int unsigned auto_increment not null primary key, precio_kitprod double not null,porcentaje int not null,cantidad int not null,cve_prod varchar(100) not null, cve_kit int unsigned not null, foreign key(cve_prod) references producto(cve_prod), foreign key(cve_kit) references kit(cve_kit)on delete restrict on update cascade);
+
+create table cliente(cve_cli int unsigned auto_increment not null primary key, nombre_cli varchar(100) not null, paterno_cli varchar(100) not null, materno_cli varchar(100) not null, rfc_cli varchar(150) not null, mail_cli varchar(100) not null, direccion_cli text not null, tel_cli varchar(20) not null, status_cli int not null);
+
+create table kardex(cve_kar int unsigned auto_increment not null primary key, stockmax_kar int not null, stockmin_kar int not null, cve_prod varchar(100) not null, foreign key(cve_prod) references producto(cve_prod)on delete restrict on update cascade);
+
+create table renglonkardex(num_renkar int unsigned auto_increment not null primary key, operacion_renkar varchar(50) not null, fecha_renkar datetime not null, cantidad_renkar float unsigned not null, existencia_renkar float unsigned not null,cve_kar int unsigned not null, foreign key(cve_kar) references kardex(cve_kar)on delete restrict on update cascade);
+
+create table venta(cve_ven int unsigned auto_increment not null primary key,fecha_ven date not null, total_ven float not null, cve_cli int unsigned not null, foreign key(cve_cli) references cliente(cve_cli)on delete restrict on update cascade);
+
+create table renglonventa(cve_renven int unsigned auto_increment not null primary key, nom_prod varchar(100) not null, cant_renven float not null, pu_renven float not null, cve_prod varchar(100) not null, cve_ven int unsigned not null, foreign key(cve_prod) references producto(cve_prod), foreign key(cve_ven) references venta(cve_ven)on delete restrict on update cascade);
+
+
+
+
+

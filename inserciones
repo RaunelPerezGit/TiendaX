@@ -1,0 +1,63 @@
+insert cliente values(null,"jose","angeles","hernandez","jaah22","jose123","naranjos poniente","7151245581",1);
+insert cliente values(null,"pedrito","perez","leon","pedri12","pedro@lol","la palma","7151185147",1);
+
+insert into usuario values(null,"raunel","perez","Robles","rau123","raunel@hotmail.com","la palma","7151123952","rauny","1234",1,1,1);
+insert into usuario values(null,"alfredo","angeles","hernandez","aah97","jose@hotmail.com","naranjos","7151245581","jaah","1111",1,0,1);
+insert into usuario values(null,"jhon","Kennet","Turner","jhon123","jhon@hotmail.com","Las Rosas","7151121691","jhon","1234",1,0,1);
+
+insert into proveedor values(null,"isaac","newton","primero","new123","newton@hotmail","morelos norte","1539048",1);
+insert into proveedor values(null,"nikola","tesla","segundo","tesla123","testla@hotmial.com","pipila sur","7151234564",1);
+insert into proveedor values(null,"thomas","alva","edison","tomi34","tomas@gmail.com","reforma sur","7151257890",1);
+
+insert into producto values("12sab","sabritas",12.50,"pz",1,1);
+insert into producto values("123dor","doritos",12.50,"pz",1,1);
+insert into producto values("11ruf","rufles",11.50,"pz",1,1);
+
+insert into producto values("22foc","focos",8.50,"pz",1,2);
+insert into producto values("21azu","azucar",16,"kg",1,2);
+insert into producto values("213hue","huevo",22,"kg",1,2);
+
+insert into producto values("31ace","aceite",18.50,"lts",1,3);
+insert into producto values("32lec","leche",17.50,"lts",1,3);
+insert into producto values("33coca","coca-cola 2.5l",26,"lts",1,3);
+insert into producto values("34man","manzanita 600ml",12,"lts",1,3);
+
+insert into kit values(null,"rikolino",1);
+insert into kit values(null,"pastelero",1);
+insert into kit values(null,"disfrute",1);
+
+insert into kitproducto values(null,32.95,15,1,"12sab",1);
+insert into kitproducto values(null,32.95,15,1,"33coca",1);
+
+insert into kitproducto values(null,43,15,1,"21azu",2);
+insert into kitproducto values(null,43,15,1,"213hue",2);
+insert into kitproducto values(null,43,15,1,"31ace",2);
+
+insert into kitproducto values(null,20.9,15,1,"123dor",3);
+insert into kitproducto values(null,20.9,15,1,"34man",3);
+
+insert into kardex values(null,10,3,"12sab");
+insert into kardex values(null,10,3,"123dor");
+insert into kardex values(null,10,3,"11ruf");
+insert into kardex values(null,8,2,"22foc");
+insert into kardex values(null,20,2,"21azu");
+insert into kardex values(null,20,3,"213hue");
+insert into kardex values(null,10,2,"31ace");
+insert into kardex values(null,10,2,"32lec");
+insert into kardex values(null,12,2,"33coca");
+insert into kardex values(null,12,2,"34man");
+
+insert into renglonkardex values(null,"E",now(),8,8,1);
+insert into renglonkardex values(null,"E",now(),8,8,2);
+insert into renglonkardex values(null,"E",now(),8,8,3);
+insert into renglonkardex values(null,"E",now(),8,8,4);
+insert into renglonkardex values(null,"E",now(),20,20,5);
+insert into renglonkardex values(null,"E",now(),20,20,6);
+insert into renglonkardex values(null,"E",now(),10,10,7);
+insert into renglonkardex values(null,"E",now(),10,10,8);
+insert into renglonkardex values(null,"E",now(),12,12,9);
+insert into renglonkardex values(null,"E",now(),12,12,10);
+
+
+
+
